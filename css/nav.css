@@ -1,0 +1,158 @@
+.navbar-default {
+  background-color: #3C4959;
+  font-family: "Open Sans", Helvetica, "sans serif";
+  color: white; }
+  .navbar-default .navbar-brand {
+    font-family: "Brush Script MT", cursive;
+    font-size: 2em;
+    color: white; }
+  .navbar-default .navbar-nav > li > a {
+    font-family: "Open Sans", Helvetica, "sans serif";
+    color: white; }
+    .navbar-default .navbar-nav > li > a.hover {
+      color: white; }
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+  background-color: #627183;
+  color: white; }
+
+.header {
+  margin-top: -2em;
+  height: 768px;
+  background: url("../img/sutton-fair-wagon.JPG") no-repeat fixed center;
+  background-size: 100%; }
+  .header .overlay {
+    background: rgba(0, 0, 0, 0.6); }
+  .header .header_title {
+    padding: 4em;
+    font-family: "Open Sans", Helvetica, "sans serif";
+    color: white;
+    text-align: center; }
+  .header .header_subtitle {
+    padding: 8em;
+    font-family: "Open Sans", Helvetica, "sans serif";
+    color: white;
+    text-align: center; }
+
+.corner {
+  height: 200px;
+  width: 100%;
+  background-color: #EB649F;
+  text-align: center;
+  padding: 2em; }
+  .corner a {
+    font-family: "Open Sans", Helvetica, "sans serif";
+    color: white;
+    text-decoration: none; }
+  .corner img {
+    height: 75px;
+    width: 75px; }
+
+.shop {
+  text-align: center;
+  padding: 2em; }
+  .shop #shop-title {
+    margin-bottom: 1em; }
+  .shop img {
+    width: 100%; }
+
+.blog {
+  width: 100%;
+  background-color: #EB649F;
+  padding: 2em; }
+  .blog #blog-title {
+    margin-bottom: 1em;
+    text-align: center;
+    font-family: "Open Sans", Helvetica, "sans serif";
+    color: white; }
+  .blog .post {
+    padding: 1em 2em;
+    font-family: "Open Sans", Helvetica, "sans serif";
+    color: white; }
+    .blog .post .post-title {
+      text-align: center;
+      font-size: 1.5em; }
+    .blog .post .post-date {
+      text-align: center;
+      margin-bottom: 1.5em;
+      font-size: 1em;
+      font-family: "Merriweather", Georgia, serif; }
+    .blog .post .post-content {
+      margin-bottom: 1.5em;
+      font-family: "Merriweather", Georgia, serif; }
+  .blog a {
+    font-family: "Open Sans", Helvetica, "sans serif";
+    color: #B8E986;
+    text-decoration: none; }
+  .blog img {
+    height: 75px;
+    width: 75px; }
+
+.artists {
+  text-align: center;
+  width: 100%; }
+  .artists .container {
+    margin: 0 auto; }
+  .artists #shop-title {
+    margin-top: 1em;
+    margin-bottom: 1em; }
+  .artists .row {
+    margin: 0; }
+  .artists .person {
+    width: 375px;
+    height: 375px;
+    float: left; }
+    .artists .person .artist {
+      position: absolute; }
+      .artists .person .artist img {
+        width: 375px;
+        height: 375px; }
+    .artists .person .overlay {
+      position: relative;
+      background: rgba(0, 0, 0, 0.3);
+      width: 375px;
+      height: 375px; }
+      .artists .person .overlay .name {
+        padding-top: 6em;
+        font-family: "Open Sans", Helvetica, "sans serif";
+        color: white;
+        font-size: 2em;
+        position: relative; }
+
+.sponsors {
+  text-align: center;
+  padding: 2em; }
+  .sponsors .row {
+    margin-top: -4em; }
+  .sponsors .google {
+    padding-top: 6em; }
+  .sponsors #shop-title {
+    margin-bottom: 1em; }
+  .sponsors img {
+    width: 100%; }
+
+.footer {
+  background: #3C4959;
+  padding: 2em 0;
+  text-align: center;
+  font-family: "Open Sans", Helvetica, "sans serif";
+  color: white; }
+  .footer a {
+    font-family: "Open Sans", Helvetica, "sans serif";
+    color: #B8E986;
+    text-decoration: none; }
+  .footer .copyright {
+    padding: 1em 0 0 0; }
+  .footer .address {
+    padding: 0 0 1em 0; }
+  .footer .social a {
+    padding: 0 1em; }
+
+.clearfix:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both; }
+
+/*# sourceMappingURL=nav.css.map */
