@@ -75,7 +75,7 @@
 */
 .corner {
   width: 100%;
-  background-color: #EB649F;
+  background-color: #008FB2;
   text-align: center;
   padding: 2em 1em;
   .blog-icon, .shop-icon, .discover-icon{
@@ -121,7 +121,7 @@
 */
 .blog {
   width: 100%;
-  background-color: #EB649F;
+  background-color: #B045B0;
   padding: 2em 1em;
   #blog-title{
     margin-bottom: 1em;
@@ -146,6 +146,9 @@
     .post-content {
       margin-bottom: 1.5em;
       font-family: $secondary-font;
+    }
+    .read-more{
+      color: #5CE62E;
     }
   }
   a {
@@ -241,7 +244,7 @@
   color: $font-color;
   a {
     font-family: $font;
-    color: #B8E986;
+    color: #5CE62E;
     text-decoration: none;
   }
   .copyright {
@@ -249,6 +252,7 @@
   }
   .address {
     padding: 0 0 1em 0;
+    color: #5CE62E;
   }
   .social {
     a{

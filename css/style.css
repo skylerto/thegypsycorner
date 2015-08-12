@@ -50,13 +50,13 @@
     height: 768px;
     background: rgba(0, 0, 0, 0.6); }
   .header .header_title {
-    padding: 3em 1em 4em 1em;
+    padding: 4em 1em 5em 1em;
     font-family: "Open Sans", Helvetica, "sans serif";
     color: white;
     text-align: center; }
   .header .header_subtitle {
     width: 100%;
-    padding: 5em 1em 1em 1em;
+    padding: 6em 1em 1em 1em;
     font-family: "Open Sans", Helvetica, "sans serif";
     color: white;
     text-align: center; }
@@ -66,7 +66,7 @@
 */
 .corner {
   width: 100%;
-  background-color: #EB649F;
+  background-color: #008FB2;
   text-align: center;
   padding: 2em 1em; }
   .corner .blog-icon, .corner .shop-icon, .corner .discover-icon {
@@ -99,7 +99,7 @@
 */
 .blog {
   width: 100%;
-  background-color: #EB649F;
+  background-color: #B045B0;
   padding: 2em 1em; }
   .blog #blog-title {
     margin-bottom: 1em;
@@ -121,6 +121,8 @@
     .blog .post .post-content {
       margin-bottom: 1.5em;
       font-family: "Merriweather", Georgia, serif; }
+    .blog .post .read-more {
+      color: #5CE62E; }
   .blog a {
     font-family: "Open Sans", Helvetica, "sans serif";
     color: #B8E986;
@@ -189,12 +191,13 @@
   color: white; }
   .footer a {
     font-family: "Open Sans", Helvetica, "sans serif";
-    color: #B8E986;
+    color: #5CE62E;
     text-decoration: none; }
   .footer .copyright {
     padding: 1em 0 0 0; }
   .footer .address {
-    padding: 0 0 1em 0; }
+    padding: 0 0 1em 0;
+    color: #5CE62E; }
   .footer .social a {
     padding: 0 1em; }
 
