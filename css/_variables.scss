@@ -1,0 +1,19 @@
+$background-color: #3C4959;
+$brand-font: 'Brush Script MT', cursive;
+$font: 'Open Sans', Helvetica, 'sans serif';
+$font-color :white;
+
+$secondary-font:'Merriweather', Georgia, serif;
+
+// artist
+$artist-size: 310px;
+
+$product-size: 310px;
+
+.clearfix:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
