@@ -322,4 +322,29 @@
         font-size: 0.9em;
         color: #8F8F8F; }
 
+/*
+*   10 - Artwork
+*/
+.artist-info {
+  margin-top: 3em; }
+  .artist-info .artist-profile {
+    width: 310px;
+    height: 310px;
+    margin: 1em auto; }
+    .artist-info .artist-profile img {
+      width: 310px;
+      height: 310px; }
+  .artist-info .content {
+    margin: 0 auto;
+    text-align: center;
+    width: 80%; }
+    .artist-info .content .name {
+      font-family: "Open Sans", Helvetica, "sans serif";
+      font-weight: 600;
+      font-size: 2em; }
+    .artist-info .content .bio {
+      font-family: "Merriweather", Georgia, serif;
+      letter-spacing: 0.5px;
+      line-height: 25px; }
+
 /*# sourceMappingURL=style.css.map */
