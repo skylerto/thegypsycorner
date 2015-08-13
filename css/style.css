@@ -88,7 +88,7 @@
   .shop #shop-title {
     margin-bottom: 1em; }
   .shop .product {
-    margin: 0 auto;
+    margin: 0.4em auto;
     height: 310px;
     width: 310px; }
     .shop .product img {
@@ -136,18 +136,15 @@
 */
 .artists {
   text-align: center;
-  width: 100%; }
-  .artists .container {
-    margin: 0 auto; }
+  width: 100%;
+  padding: 2em; }
   .artists #shop-title {
     margin-top: 1em;
     margin-bottom: 1em; }
-  .artists .row {
-    margin: 0 auto; }
   .artists .person {
     width: 310px;
     height: 310px;
-    float: left; }
+    margin: 0.4em; }
     .artists .person .artist {
       position: absolute; }
       .artists .person .artist img {
