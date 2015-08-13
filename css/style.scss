@@ -105,7 +105,7 @@
     margin-bottom: 1em;
   }
   .product {
-    margin: 0 auto;
+    margin: 0.4em auto;
     height: $product-size;
     width: $product-size;
     img {
@@ -170,24 +170,18 @@
 .artists {
   text-align: center;
   width: 100%;
-  .container {
-    margin: 0 auto;
-  }
+  padding: 2em;
   #shop-title{
     margin-top: 1em;
     margin-bottom: 1em;
   }
-  .row {
-    margin: 0 auto;
-  }
   .person {
     width: $artist-size;
     height:$artist-size;
-    float: left;
 
+    margin: 0.4em;
     .artist {
       position: absolute;
-
       img {
         width: $artist-size;
         height:$artist-size;
@@ -252,7 +246,7 @@
   }
   .address {
     padding: 0 0 1em 0;
-    
+
   }
   .social {
     a{
