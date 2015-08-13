@@ -267,10 +267,11 @@
 .postlets {
   text-align: center;
   width: 100%;
-  padding: 2em;
+  a {
+    text-decoration: none;
+  }
 .postlet {
-
-  margin: 1em;
+margin: 2em 1em;
   .postlet-image {
     position: absolute;
     img{
@@ -302,8 +303,54 @@
   }
 }
 
+/* Post */
+
+.post {
+  width: 100%;
+  padding: 2em;
+  margin: 1em;
+  .post-image {
+
+    img{
+      width: $postlet-image-width;
+      height:$postlet-image-height;
+    }
+  }
+
+  .post-header {
+    .post-title{
+      font-family: $font;
+      font-weight: 600;
+    }
+    .post-date {
+      margin-top: -0.5em;
+      color: #8F8F8F;
+      font-weight: 300;
+      font-family: $font;
+      font-size: 1.1em;
+    }
+
+  }
+  .post-content{
+    font-family: $secondary-font ;
+    letter-spacing: 0.5px;
+    line-height: 25px;
+    }
+    p {
+      margin-top: 2em;
+    }
+  }
+
+
+
 /* Top Stories */
 .sidebar {
+  text-align: left;
+  padding: 1em;
+  margin: 2em 0;
+  a {
+    color: #333;
+  }
 #top-story {
   font-weight: 800;
   padding-left: 1em;
