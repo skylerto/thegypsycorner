@@ -20,6 +20,10 @@
 /*
 *   1.0 - Navigation
 */
+.navbar {
+  margin: 0;
+  padding: 0; }
+
 .navbar-default {
   background-color: #3C4959;
   font-family: "Open Sans", Helvetica, "sans serif";
@@ -244,5 +248,49 @@
     .sidebar .top-stories .story .story-date {
       font-size: 0.9em;
       color: #8F8F8F; }
+
+/*
+* NAVIGATION
+*/
+.nav_bar {
+  margin: 0;
+  border-bottom: 0.1em solid #CECECF;
+  height: 50px;
+  background-color: #B045B0; }
+  .nav_bar ul {
+    list-style: none; }
+    .nav_bar ul li {
+      float: left; }
+  .nav_bar .nav_link {
+    padding-top: 1em;
+    margin: 0 1em; }
+    .nav_bar .nav_link a {
+      color: white; }
+  .nav_bar .navbar_left {
+    float: left; }
+  .nav_bar .navbar_right {
+    float: right; }
+    .nav_bar .navbar_right .profile_image {
+      margin-right: 1em; }
+      .nav_bar .navbar_right .profile_image img {
+        border-radius: 25px;
+        margin: 0;
+        padding: 0.2em;
+        width: 50px;
+        height: 50px; }
+    .nav_bar .navbar_right .search {
+      margin-top: 0.6em;
+      margin-right: 0.5em;
+      padding: 0.2em;
+      outline: none;
+      background: white;
+      border: 1px solid #A6A5A6;
+      border-radius: 1.5em; }
+    .nav_bar .navbar_right input[type="search"] {
+      padding-left: 0.4em;
+      outline: none;
+      background: transparent;
+      border: none;
+      border-radius: 1.5em; }
 
 /*# sourceMappingURL=style.css.map */
