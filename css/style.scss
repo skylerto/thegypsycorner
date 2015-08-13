@@ -428,3 +428,35 @@ margin: 2em 1em;
   }
 }
 }
+
+/*
+*   10 - Artwork
+*/
+.artist-info {
+  margin-top: 3em;
+  .artist-profile {
+    width: $artist-size;
+    height:$artist-size;
+    margin: 1em auto;
+    img {
+      width: $artist-size;
+      height:$artist-size;
+    }
+  }
+  .content {
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+    .name {
+      font-family: $font;
+      font-weight: 600;
+      font-size: 2em;
+    }
+    .bio {
+
+      font-family: $secondary-font ;
+      letter-spacing: 0.5px;
+      line-height: 25px;
+    }
+  }
+}
