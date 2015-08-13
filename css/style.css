@@ -197,4 +197,52 @@
   .footer .social a {
     padding: 0 1em; }
 
+/*
+*   9.0 - Blog
+*/
+/* Postlets */
+.postlets {
+  text-align: center;
+  width: 100%;
+  padding: 2em; }
+  .postlets .postlet {
+    margin: 1em; }
+    .postlets .postlet .postlet-image {
+      position: absolute; }
+      .postlets .postlet .postlet-image img {
+        width: 546px;
+        height: 164px; }
+    .postlets .postlet .postlet-content {
+      width: 546px;
+      height: 164px;
+      position: relative;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 2.5em 1em; }
+      .postlets .postlet .postlet-content .postlet-title {
+        font-family: "Open Sans", Helvetica, "sans serif";
+        color: white;
+        font-size: 2em;
+        position: relative; }
+      .postlets .postlet .postlet-content .postlet-date {
+        font-family: "Open Sans", Helvetica, "sans serif";
+        color: white;
+        font-size: 1.2em;
+        position: relative; }
+
+/* Top Stories */
+.sidebar #top-story {
+  font-weight: 800;
+  padding-left: 1em; }
+.sidebar .top-stories {
+  padding: 1em; }
+  .sidebar .top-stories .story {
+    border-bottom: 1px solid #0090B0; }
+    .sidebar .top-stories .story .story-title {
+      font-weight: 600;
+      font-size: 1em;
+      margin: 0; }
+    .sidebar .top-stories .story .story-date {
+      font-size: 0.9em;
+      color: #8F8F8F; }
+
 /*# sourceMappingURL=style.css.map */
