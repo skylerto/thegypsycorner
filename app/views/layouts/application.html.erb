@@ -8,7 +8,59 @@
 </head>
 <body>
 
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">The Gypsy Corner</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-right" id="navbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="./index.html">Home</a></li>
+          <li class=""><a href="#shop">Shop</a></li>
+          <li class=""><a href="./blog.html">Blog</a></li>
+          <li class=""><a href="./artwork.html">Artists</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
 <%= yield %>
+
+
+<div class="footer">
+  <div class="container">
+    <h2>Say <a href="#">hello@thegypsycorner.ca</a></h2>
+    <p class="copyright">
+      © The Gypsy Corner. All rights reserved. Made proudly in Toronto, ON.
+    </p>
+    <p class="address">
+      4700 Keele Street, Toronto ON • M3J1P3 • Canada
+    </p>
+    <div class="social">
+      <%= link_to "http://www.facebook.com" do %>
+        <%= image_tag "social/facebook.png" %>
+      <% end %>
+      <%= link_to "http://www.instagram.com" do %>
+        <%= image_tag "social/instagram.png" %>
+      <% end %>
+      <%= link_to "http://www.googleplus.com" do %>
+        <%= image_tag "social/googleplus.png" %>
+      <% end %>
+      <%= link_to "http://www.twitter.com" do %>
+        <%= image_tag "social/twitter.png" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 
 </body>
 </html>
