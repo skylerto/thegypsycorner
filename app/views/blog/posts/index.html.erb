@@ -1,0 +1,114 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <h1 class="center">Blog</h1>
+</div>
+
+
+
+<!-- Container for post layouts  -->
+<div class="container">
+  <div class="row">
+    <!--  Container for postlets -->
+    <div class="postlets">
+      <div class="col-md-8">
+        <div class="medium-buttons-blue ">
+          <%= link_to 'New Post', new_blog_post_path, :class => "medium-button-blue" %>
+        </div>
+        <div class="clearfix">
+          
+        </div>
+      <% @blog_posts.each do |post| %>
+        <%= link_to post do %>
+          <div class="postlet">
+
+            <div class="postlet-image">
+              <%= image_tag post.image.url(:medium) %>
+            </div>
+
+            <div class="postlet-content">
+
+              <p class="postlet-title">
+                <%= post.title %>
+              </p>
+
+              <p class="postlet-date">
+                <%= post.updated_at.strftime("%B %d, %Y") %>
+                by <%= post.user.name %>
+              </p>
+              <% if current_user == post.user %>
+              <div class="medium-buttons">
+                <%= link_to 'Edit', edit_blog_post_path(post), :class => "medium-button" %>
+                <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "medium-button" %>
+              </div>
+              <% end %>
+
+            </div>
+
+          </div>
+        <% end %>
+
+      <% end %>
+      </div>
+    </div>
+
+    <!--  container for TOPSTORIES -->
+    <div class="col-md-4 sidebar">
+      <p id="top-story">TOP STORIES</p>
+      <a  href="./example-post.html">
+        <div class="top-stories">
+          <div class="story">
+            <p class="story-title">
+                Hoodie direct trade Intelligentsia
+              </p>
+
+              <p class="story-date">
+                21 July 2015 by The Gypsy
+              </p>
+          </div>
+        </div>
+      </a>
+      <a  href="./example-post.html">
+        <div class="top-stories">
+          <div class="story">
+            <p class="story-title">
+                Hoodie direct trade Intelligentsia
+              </p>
+
+              <p class="story-date">
+                21 July 2015 by The Gypsy
+              </p>
+          </div>
+        </div>
+      </a>
+      <a  href="./example-post.html">
+        <div class="top-stories">
+          <div class="story">
+            <p class="story-title">
+                Hoodie direct trade Intelligentsia
+              </p>
+
+              <p class="story-date">
+                21 July 2015 by The Gypsy
+              </p>
+          </div>
+        </div>
+      </a>
+      <a  href="./example-post.html">
+        <div class="top-stories">
+          <div class="story">
+            <p class="story-title">
+                Hoodie direct trade Intelligentsia
+              </p>
+
+              <p class="story-date">
+                21 July 2015 by The Gypsy
+              </p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+
+  </div>
+</div>

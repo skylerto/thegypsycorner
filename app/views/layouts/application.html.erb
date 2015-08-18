@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -23,16 +24,70 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-right" id="navbar">
         <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="./index.html">Home</a></li>
+          <li class=""><%= link_to "Home", root_path %></li>
           <li class=""><a href="#shop">Shop</a></li>
-          <li class=""><a href="./blog.html">Blog</a></li>
+          <li class=""><%= link_to "Blog", blog_posts_path %></li>
           <li class=""><a href="./artwork.html">Artists</a></li>
+          <% if user_signed_in? %>
+            <li class=""><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+          <% else %>
+            <li class=""><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+          <% end %>
+
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
 
-<%= yield %>
+  <% if controller_name == "posts" %>
+  <!--  BLOG -->
+  <nav class="nav_bar">
+    <div class="navbar_left ">
+      <ul>
+        <li class="nav_link">
+          <a href="#">My Journey</a>
+        </li>
+        <li class="nav_link">
+          <a href="#">Sacred Corner</a>
+        </li>
+        <li class="nav_link">
+          <a  href="./example-post.html">Example Post</a>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar_center">
+
+    </div>
+    <div class="navbar_right clearfix">
+      <ul>
+        <li >
+          <a href="#" >
+            <div class="search">
+            <%= image_tag "search.png", :class => "search-icon"  %><input type="search" placeholder="Search"/>
+            </div>
+
+          </a>
+        </li>
+        <!-- <li><a href="#" class="profile_image"><img src="img/sophie.JPG" /></a></li> -->
+        <li class="profile_image">
+
+            <% if user_signed_in? %>
+              Logged in as <strong><%= current_user.email %></strong> |
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+            <% else %>
+              <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+              <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+            <% end %>
+
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <% end %>
+
+
+  <%= yield %>
 
 
 <div class="footer">

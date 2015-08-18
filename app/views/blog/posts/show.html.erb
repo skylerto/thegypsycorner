@@ -1,0 +1,97 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="post">
+
+  <div class="post-image">
+    <%= image_tag @blog_post.image.url(:medium) %>
+  </div>
+
+<div class="post-header">
+  <h1 class="center post-title"><%= @blog_post.title %></h1>
+  <div class="post-date">
+    <%= @blog_post.updated_at.strftime("%B %d, %Y") %> by <%= @blog_post.user.name %>
+  </div>
+</div>
+
+
+<% if current_user == @blog_post.user %>
+<div class="medium-buttons-blue-left">
+  <%= link_to 'Edit', edit_blog_post_path(@blog_post), :class => "medium-button-blue-left" %>
+  <%= link_to 'Back', blog_posts_path, :class => "medium-button-blue-left" %>
+</div>
+<% end %>
+
+<div class="post-content">
+
+    <%= @blog_post.content.html_safe %>
+  
+</div>
+
+</div>
+</div>
+
+<!--  container for TOPSTORIES -->
+<div class="col-md-4 sidebar">
+  <p id="top-story">TOP STORIES</p>
+  <a  href="./example-post.html">
+    <div class="top-stories">
+      <div class="story">
+        <p class="story-title">
+            Hoodie direct trade Intelligentsia
+          </p>
+
+          <p class="story-date">
+            21 July 2015 by The Gypsy
+          </p>
+      </div>
+    </div>
+  </a>
+  <a  href="./example-post.html">
+    <div class="top-stories">
+      <div class="story">
+        <p class="story-title">
+            Hoodie direct trade Intelligentsia
+          </p>
+
+          <p class="story-date">
+            21 July 2015 by The Gypsy
+          </p>
+      </div>
+    </div>
+  </a>
+  <a  href="./example-post.html">
+    <div class="top-stories">
+      <div class="story">
+        <p class="story-title">
+            Hoodie direct trade Intelligentsia
+          </p>
+
+          <p class="story-date">
+            21 July 2015 by The Gypsy
+          </p>
+      </div>
+    </div>
+  </a>
+  <a  href="./example-post.html">
+    <div class="top-stories">
+      <div class="story">
+        <p class="story-title">
+            Hoodie direct trade Intelligentsia
+          </p>
+
+          <p class="story-date">
+            21 July 2015 by The Gypsy
+          </p>
+      </div>
+    </div>
+  </a>
+</div>
+
+</div>
+</div>
+</div>

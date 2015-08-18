@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'paperclip'
 gem 'devise'
 gem 'aws-sdk', '< 2.0'
+gem 'devise-bootstrap-views'
 
 group :development, :test do
   gem 'byebug'
