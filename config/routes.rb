@@ -2,6 +2,12 @@ Rails.application.routes.draw do
 
 
 
+  namespace :artists do
+    resources :portfolios
+  end
+  namespace :artists do
+    resources :pieces
+  end
   resources :tags
   namespace :blog do
     get '/myjourney' => 'posts#my_journey'

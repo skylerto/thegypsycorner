@@ -1,0 +1,2 @@
+module Artists::PortfoliosHelper
+end

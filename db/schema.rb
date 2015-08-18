@@ -11,7 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150818133038) do
+ActiveRecord::Schema.define(version: 20150818181630) do
+
+  create_table "artists_pieces", force: :cascade do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "portfolio_id"
+  end
+
+  add_index "artists_pieces", ["portfolio_id"], name: "index_artists_pieces_on_portfolio_id"
+  add_index "artists_pieces", ["user_id"], name: "index_artists_pieces_on_user_id"
+
+  create_table "artists_portfolios", force: :cascade do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "artists_portfolios", ["user_id"], name: "index_artists_portfolios_on_user_id"
 
   create_table "blog_posts", force: :cascade do |t|
     t.integer  "user_id"

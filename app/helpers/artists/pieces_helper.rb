@@ -1,0 +1,2 @@
+module Artists::PiecesHelper
+end
