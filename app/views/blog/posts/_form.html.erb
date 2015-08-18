@@ -20,7 +20,7 @@
       <div class="field">
         <%= f.label :tag %><br>
         <%= f.select(:tag, @tags.map {|p|
-            [p.name, p.name]}) %>
+            [p.name, p.name]}, :include_blank => true) %>
             <div class="medium-buttons-blue-left">
               <%= link_to 'New Tag', new_tag_path, :class => "medium-button-blue-left" %>
             </div>

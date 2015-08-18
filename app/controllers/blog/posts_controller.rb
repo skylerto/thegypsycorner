@@ -1,7 +1,17 @@
 class Blog::PostsController < ApplicationController
-  before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
+  # before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, :except => [:show, :index]
 
+
+  def my_journey
+    @blog_posts = Blog::Post.where(tag: "My Journey")
+    @top_posts = Blog::Post.last(5)
+  end
+
+  def sacred_corner
+    @blog_posts = Blog::Post.where(tag:"Sacred Corner")
+    @top_posts = Blog::Post.last(5)
+  end
   # GET /blog/posts
   # GET /blog/posts.json
   def index
@@ -13,6 +23,7 @@ class Blog::PostsController < ApplicationController
   # GET /blog/posts/1
   # GET /blog/posts/1.json
   def show
+    @blog_post = Blog::Post.find(params[:id])
   end
 
   # GET /blog/posts/new
@@ -27,6 +38,7 @@ class Blog::PostsController < ApplicationController
 
   # GET /blog/posts/1/edit
   def edit
+    @blog_post = Blog::Post.find(params[:id])
     @tags = Tag.all
   end
 
@@ -56,6 +68,7 @@ class Blog::PostsController < ApplicationController
   # PATCH/PUT /blog/posts/1.json
   def update
     if current_user.admin?
+      @blog_post = Blog::Post.find(params[:id])
     respond_to do |format|
       if @blog_post.update(blog_post_params)
         format.html { redirect_to @blog_post, notice: 'Post was successfully updated.' }
@@ -74,6 +87,7 @@ class Blog::PostsController < ApplicationController
   # DELETE /blog/posts/1.json
   def destroy
     if current_user.admin?
+      @blog_post = Blog::Post.find(params[:id])
       @blog_post.destroy
       respond_to do |format|
         format.html { redirect_to blog_posts_url, notice: 'Post was successfully destroyed.' }

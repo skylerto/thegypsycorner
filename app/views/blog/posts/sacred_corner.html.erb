@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<% title "Sacred Corner" %>
+
 <div class="container">
-  <h1 class="center">Blog</h1>
+  <h1 class="center">Sacred Corner</h1>
 </div>
 
 
@@ -22,6 +24,7 @@
         <div class="clearfix">
 
         </div>
+    <% if @blog_posts.count > 0 %>
       <% @blog_posts.each do |post| %>
         <%= link_to post do %>
           <div class="postlet">
@@ -52,6 +55,11 @@
           </div>
         <% end %>
 
+      <% end %>
+      <% else %>
+      <p>
+        No Sacred Corner posts at the moment!
+      </p>
       <% end %>
       </div>
     </div>

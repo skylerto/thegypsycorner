@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= action_name == "home" ? "Home" : controller_name.capitalize %> | The Gypsy Corner</title>
+  <title><%= if content_for?(:title) then yield(:title) + ' | ' end %>The Gypsy Corner</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -46,14 +46,12 @@
     <div class="navbar_left ">
       <ul>
         <li class="nav_link">
-          <a href="#">My Journey</a>
+          <%= link_to "My Journey", '/blog/myjourney'  %>
         </li>
         <li class="nav_link">
-          <a href="#">Sacred Corner</a>
+          <%=  link_to "Sacred Corner", '/blog/sacredcorner' %>
         </li>
-        <li class="nav_link">
-          <a  href="./example-post.html">Example Post</a>
-        </li>
+
       </ul>
     </div>
 
@@ -75,11 +73,11 @@
         <!-- <li><a href="#" class="profile_image"><img src="img/sophie.JPG" /></a></li> -->
         <li class="profile_image">
 
-          
+
               <%= link_to edit_user_registration_path do %>
                 <%= image_tag(current_user.avatar.url(:thumb)) if not current_user.avatar.nil? %>
               <% end %>
-        
+
 
           </div>
         </li>
