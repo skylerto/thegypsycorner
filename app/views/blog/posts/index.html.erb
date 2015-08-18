@@ -12,11 +12,15 @@
     <!--  Container for postlets -->
     <div class="postlets">
       <div class="col-md-8">
+
+      <% if user_signed_in? and current_user.admin? %>
         <div class="medium-buttons-blue ">
           <%= link_to 'New Post', new_blog_post_path, :class => "medium-button-blue" %>
         </div>
+      <% end %>
+
         <div class="clearfix">
-          
+
         </div>
       <% @blog_posts.each do |post| %>
         <%= link_to post do %>
@@ -36,11 +40,11 @@
                 <%= post.updated_at.strftime("%B %d, %Y") %>
                 by <%= post.user.name %>
               </p>
-              <% if current_user == post.user %>
-              <div class="medium-buttons">
-                <%= link_to 'Edit', edit_blog_post_path(post), :class => "medium-button" %>
-                <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "medium-button" %>
-              </div>
+              <% if user_signed_in? and current_user.admin? %>
+                <div class="medium-buttons">
+                  <%= link_to 'Edit', edit_blog_post_path(post), :class => "medium-button" %>
+                  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "medium-button" %>
+                </div>
               <% end %>
 
             </div>
@@ -55,7 +59,29 @@
     <!--  container for TOPSTORIES -->
     <div class="col-md-4 sidebar">
       <p id="top-story">TOP STORIES</p>
-      <a  href="./example-post.html">
+
+      <% for count in Blog::Post.count..1 %>
+        <% if count > 0   %>
+          <% @post = Blog::Post.find_by_id(count) %>
+            <%= link_to @post do %>
+              <div class="top-stories">
+                <div class="story">
+                  <p class="story-title">
+                      <%= @post.title %>
+                    </p>
+
+                    <p class="story-date">
+                      <%= @post.updated_at.strftime("%B %d, %Y") %>
+                      by <%= @post.user.name %>
+                    </p>
+                </div>
+              </div>
+
+          <% end %>
+        <% end %>
+      <% end %>
+
+      <!-- <a  href="./example-post.html">
         <div class="top-stories">
           <div class="story">
             <p class="story-title">
@@ -107,7 +133,7 @@
           </div>
         </div>
       </a>
-    </div>
+    </div> -->
 
 
   </div>
