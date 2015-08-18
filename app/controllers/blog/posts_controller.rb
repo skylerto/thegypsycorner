@@ -1,5 +1,5 @@
 class Blog::PostsController < ApplicationController
-  # before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, :except => [:show, :index]
 
 
@@ -15,7 +15,7 @@ class Blog::PostsController < ApplicationController
   # GET /blog/posts
   # GET /blog/posts.json
   def index
-    @blog_posts = Blog::Post.all
+    @blog_posts = Blog::Post.all.order("created_at DESC")
     @tags = Tag.all
     @top_posts = Blog::Post.last(5)
   end
@@ -24,6 +24,7 @@ class Blog::PostsController < ApplicationController
   # GET /blog/posts/1.json
   def show
     @blog_post = Blog::Post.find(params[:id])
+    @top_posts = Blog::Post.last(5)
   end
 
   # GET /blog/posts/new
@@ -40,6 +41,7 @@ class Blog::PostsController < ApplicationController
   def edit
     @blog_post = Blog::Post.find(params[:id])
     @tags = Tag.all
+    @top_posts = Blog::Post.last(5)
   end
 
   # POST /blog/posts

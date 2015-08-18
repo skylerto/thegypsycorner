@@ -14,7 +14,7 @@
 <div class="post-header">
   <h1 class="center post-title"><%= @blog_post.title %></h1>
   <div class="post-date">
-    <%= @blog_post.updated_at.strftime("%B %d, %Y") %> by <%= @blog_post.user.name %>, <%= @blog_post.tag %>
+    <%= @blog_post.updated_at.strftime("%B %d, %Y") %> by <%= @blog_post.user.name %><%= ", " + @blog_post.tag if @blog_post.tag.length > 0 %>
   </div>
 </div>
 
@@ -38,58 +38,26 @@
 <!--  container for TOPSTORIES -->
 <div class="col-md-4 sidebar">
   <p id="top-story">TOP STORIES</p>
-  <a  href="./example-post.html">
-    <div class="top-stories">
-      <div class="story">
-        <p class="story-title">
-            Hoodie direct trade Intelligentsia
-          </p>
 
-          <p class="story-date">
-            21 July 2015 by The Gypsy
-          </p>
-      </div>
-    </div>
-  </a>
-  <a  href="./example-post.html">
-    <div class="top-stories">
-      <div class="story">
-        <p class="story-title">
-            Hoodie direct trade Intelligentsia
-          </p>
+  <% @top_posts.each do |post| %>
+        <%= link_to post do %>
+          <div class="top-stories">
+            <div class="story">
+              <p class="story-title">
+                  <%= post.title %>
+                </p>
 
-          <p class="story-date">
-            21 July 2015 by The Gypsy
-          </p>
-      </div>
-    </div>
-  </a>
-  <a  href="./example-post.html">
-    <div class="top-stories">
-      <div class="story">
-        <p class="story-title">
-            Hoodie direct trade Intelligentsia
-          </p>
+                <p class="story-date">
+                  <%= post.updated_at.strftime("%B %d, %Y") %>
+                  by <%= post.user.name %>
+                </p>
+            </div>
+          </div>
 
-          <p class="story-date">
-            21 July 2015 by The Gypsy
-          </p>
-      </div>
-    </div>
-  </a>
-  <a  href="./example-post.html">
-    <div class="top-stories">
-      <div class="story">
-        <p class="story-title">
-            Hoodie direct trade Intelligentsia
-          </p>
+  <% end %>
+  <% end %>
+</div>
 
-          <p class="story-date">
-            21 July 2015 by The Gypsy
-          </p>
-      </div>
-    </div>
-  </a>
 </div>
 
 </div>

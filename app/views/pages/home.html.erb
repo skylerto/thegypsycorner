@@ -93,74 +93,18 @@
   <div class="container">
     <h1 id="blog-title">I love to blog...</h1>
     <div class="row">
-      <div class="col-md-4">
-          <div class="post">
-            <h3 class="post-title">Hoodie direct trade Intelligentsia</h3>
-            <h4 class="post-date">8 August 2015 by The Gypsy</h4>
-            <p class="post-content">
-              Hoodie direct trade Intelligentsia, retro occupy flannel Williamsburg fingerstache gluten-free listicle iPhone mumblecore deep v. Cliche occupy aesthetic, farm-to-table try-hard fixie bicycle rights Tumblr twee readymade wolf banjo plaid meh. Banjo 90's meggings quinoa YOLO,.
-            </p>
-
-              <a href="#" class="read-more">Read more</a>
-          </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="post">
-          <h3 class="post-title">Hoodie direct trade Intelligentsia</h3>
-          <h4 class="post-date">8 August 2015 by The Gypsy</h4>
-          <p class="post-content">
-            Hoodie direct trade Intelligentsia, retro occupy flannel Williamsburg fingerstache gluten-free listicle iPhone mumblecore deep v. Cliche occupy aesthetic, farm-to-table try-hard fixie bicycle rights Tumblr twee readymade wolf banjo plaid meh. Banjo 90's meggings quinoa YOLO,.
-          </p>
-
-            <a href="#" class="read-more">Read more</a>
+      <% @blog_posts.each do |post| %>
+        <div class="col-md-4">
+            <div class="post">
+              <h3 class="post-title"><%= post.title %></h3>
+              <h4 class="post-date"><%= post.updated_at.strftime("%B %d, %Y") %> by <%= post.user.name %></h4>
+              <p class="post-content">
+                <%= post.content[0..250] %><%=  "..." if post.content.length > 250 %>
+              </p>
+              <%= link_to "Read More", post, :class => "read-more" %>
+            </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="post">
-          <h3 class="post-title">Hoodie direct trade Intelligentsia</h3>
-          <h4 class="post-date">8 August 2015 by The Gypsy</h4>
-          <p class="post-content">
-            Hoodie direct trade Intelligentsia, retro occupy flannel Williamsburg fingerstache gluten-free listicle iPhone mumblecore deep v. Cliche occupy aesthetic, farm-to-table try-hard fixie bicycle rights Tumblr twee readymade wolf banjo plaid meh. Banjo 90's meggings quinoa YOLO,.
-          </p>
-
-            <a href="#" class="read-more">Read more</a>
-        </div>
-      </div>
-      <div class="col-md-4">
-          <div class="post">
-            <h3 class="post-title">Hoodie direct trade Intelligentsia</h3>
-            <h4 class="post-date">8 August 2015 by The Gypsy</h4>
-            <p class="post-content">
-              Hoodie direct trade Intelligentsia, retro occupy flannel Williamsburg fingerstache gluten-free listicle iPhone mumblecore deep v. Cliche occupy aesthetic, farm-to-table try-hard fixie bicycle rights Tumblr twee readymade wolf banjo plaid meh. Banjo 90's meggings quinoa YOLO,.
-            </p>
-
-              <a href="#" class="read-more">Read more</a>
-          </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="post">
-          <h3 class="post-title">Hoodie direct trade Intelligentsia</h3>
-          <h4 class="post-date">8 August 2015 by The Gypsy</h4>
-          <p class="post-content">
-            Hoodie direct trade Intelligentsia, retro occupy flannel Williamsburg fingerstache gluten-free listicle iPhone mumblecore deep v. Cliche occupy aesthetic, farm-to-table try-hard fixie bicycle rights Tumblr twee readymade wolf banjo plaid meh. Banjo 90's meggings quinoa YOLO,.
-          </p>
-
-            <a href="#" class="read-more">Read more</a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="post">
-          <h3 class="post-title">Hoodie direct trade Intelligentsia</h3>
-          <h4 class="post-date">8 August 2015 by The Gypsy</h4>
-          <p class="post-content">
-            Hoodie direct trade Intelligentsia, retro occupy flannel Williamsburg fingerstache gluten-free listicle iPhone mumblecore deep v. Cliche occupy aesthetic, farm-to-table try-hard fixie bicycle rights Tumblr twee readymade wolf banjo plaid meh. Banjo 90's meggings quinoa YOLO,.
-          </p>
-
-            <a href="#" class="read-more">Read more</a>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
@@ -174,18 +118,16 @@
     <div class="row">
 
       <div class="col-md-4 col-sm-6 person ">
-<%= link_to "/" do %>
-        <div class="artist">
-
-            <%= image_tag "britney.jpg" %>
-
-        </div>
-        <div class="overlay">
-          <p class="name">
-            Britney Blaney
-          </p>
-        </div>
-<% end %>
+        <%= link_to "/" do %>
+          <div class="artist">
+              <%= image_tag "britney.jpg" %>
+          </div>
+          <div class="overlay">
+            <p class="name">
+              Britney Blaney
+            </p>
+          </div>
+        <% end %>
       </div>
 
       <div class="col-md-4 col-sm-6 person ">
