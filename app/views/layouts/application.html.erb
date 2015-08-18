@@ -39,9 +39,10 @@
     </div><!-- /.container-fluid -->
   </nav>
 
-  <% if controller_name == "posts" %>
+  <% if user_signed_in? %>
   <!--  BLOG -->
   <nav class="nav_bar">
+      <% if controller_name == "posts" %>
     <div class="navbar_left ">
       <ul>
         <li class="nav_link">
@@ -55,6 +56,9 @@
         </li>
       </ul>
     </div>
+
+
+    <% end %>
     <div class="navbar_center">
 
     </div>
@@ -71,9 +75,11 @@
         <!-- <li><a href="#" class="profile_image"><img src="img/sophie.JPG" /></a></li> -->
         <li class="profile_image">
 
-            <% if user_signed_in? %>
-              <%= image_tag(current_user.avatar.url(:thumb)) if not current_user.avatar.nil? %>
-            <% end %>
+          
+              <%= link_to edit_user_registration_path do %>
+                <%= image_tag(current_user.avatar.url(:thumb)) if not current_user.avatar.nil? %>
+              <% end %>
+        
 
           </div>
         </li>

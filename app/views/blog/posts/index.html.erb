@@ -60,27 +60,23 @@
     <div class="col-md-4 sidebar">
       <p id="top-story">TOP STORIES</p>
 
-      <% for count in Blog::Post.count..1 %>
-        <% if count > 0   %>
-          <% @post = Blog::Post.find_by_id(count) %>
-            <%= link_to @post do %>
+      <% @top_posts.each do |post| %>
+            <%= link_to post do %>
               <div class="top-stories">
                 <div class="story">
                   <p class="story-title">
-                      <%= @post.title %>
+                      <%= post.title %>
                     </p>
 
                     <p class="story-date">
-                      <%= @post.updated_at.strftime("%B %d, %Y") %>
-                      by <%= @post.user.name %>
+                      <%= post.updated_at.strftime("%B %d, %Y") %>
+                      by <%= post.user.name %>
                     </p>
                 </div>
               </div>
 
-          <% end %>
-        <% end %>
       <% end %>
-
+      <% end %>
       <!-- <a  href="./example-post.html">
         <div class="top-stories">
           <div class="story">

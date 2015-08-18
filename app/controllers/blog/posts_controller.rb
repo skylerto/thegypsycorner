@@ -5,6 +5,7 @@ class Blog::PostsController < ApplicationController
   # GET /blog/posts.json
   def index
     @blog_posts = Blog::Post.all
+    @top_posts = Blog::Post.last(5)
   end
 
   # GET /blog/posts/1
