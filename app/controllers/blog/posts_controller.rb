@@ -1,10 +1,12 @@
 class Blog::PostsController < ApplicationController
   before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:show, :index]
 
   # GET /blog/posts
   # GET /blog/posts.json
   def index
     @blog_posts = Blog::Post.all
+    @tags = Tag.all
     @top_posts = Blog::Post.last(5)
   end
 
@@ -15,18 +17,25 @@ class Blog::PostsController < ApplicationController
 
   # GET /blog/posts/new
   def new
-    @blog_post = Blog::Post.new
+    if current_user.admin?
+      @tags = Tag.all
+      @blog_post = Blog::Post.new
+    else
+      redirect_to root_path
+    end
   end
 
   # GET /blog/posts/1/edit
   def edit
+    @tags = Tag.all
   end
 
   # POST /blog/posts
   # POST /blog/posts.json
   def create
-
+    if current_user.admin?
     @blog_post = Blog::Post.new(blog_post_params)
+    @tags = Tag.all
     @blog_post.user_id = current_user.id
 
     respond_to do |format|
@@ -38,11 +47,15 @@ class Blog::PostsController < ApplicationController
         format.json { render json: @blog_post.errors, status: :unprocessable_entity }
       end
     end
+  else
+    redirect_to root_path
+  end
   end
 
   # PATCH/PUT /blog/posts/1
   # PATCH/PUT /blog/posts/1.json
   def update
+    if current_user.admin?
     respond_to do |format|
       if @blog_post.update(blog_post_params)
         format.html { redirect_to @blog_post, notice: 'Post was successfully updated.' }
@@ -52,15 +65,22 @@ class Blog::PostsController < ApplicationController
         format.json { render json: @blog_post.errors, status: :unprocessable_entity }
       end
     end
+  else
+    redirect_to root_path
+  end
   end
 
   # DELETE /blog/posts/1
   # DELETE /blog/posts/1.json
   def destroy
-    @blog_post.destroy
-    respond_to do |format|
-      format.html { redirect_to blog_posts_url, notice: 'Post was successfully destroyed.' }
-      format.json { head :no_content }
+    if current_user.admin?
+      @blog_post.destroy
+      respond_to do |format|
+        format.html { redirect_to blog_posts_url, notice: 'Post was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to root_path
     end
   end
 
@@ -72,6 +92,6 @@ class Blog::PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_post_params
-      params.require(:blog_post).permit(:user_id, :title, :content, :image)
+      params.require(:blog_post).permit(:user_id, :title, :content, :image, :tag)
     end
 end

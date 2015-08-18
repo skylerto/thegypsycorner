@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150818124054) do
+ActiveRecord::Schema.define(version: 20150818133038) do
 
   create_table "blog_posts", force: :cascade do |t|
     t.integer  "user_id"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20150818124054) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "tag"
   end
 
   add_index "blog_posts", ["user_id"], name: "index_blog_posts_on_user_id"
@@ -36,6 +37,15 @@ ActiveRecord::Schema.define(version: 20150818124054) do
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "blog_post_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "tags", ["blog_post_id"], name: "index_tags_on_blog_post_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
