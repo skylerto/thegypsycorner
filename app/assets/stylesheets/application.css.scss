@@ -148,6 +148,9 @@
      color: $font-color;
      &.hover{
        color: $font-color;
+
+       text-decoration: none;
+       background-color: none;
      }
    }
  }
@@ -168,16 +171,26 @@
      li {
        float: left;
      }
-   }
+    }
+
    .nav_link {
      padding-top: 1em;
      margin: 0 1em;
+
      a {
-     color: white;
+       color: white;
+       &.hover {
+         color: red;
+       }
      }
    }
    .navbar_left{
      float: left;
+     a {
+       &.hover{
+         text-decoration: none;
+       }
+     }
    }
    .navbar_right{
      float: right;
@@ -210,6 +223,7 @@
        padding-left: 0.4em;
        outline: none;
        background: transparent;
+       color: #333;
        border: none;
        border-radius: 1.5em;
      }

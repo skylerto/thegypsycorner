@@ -72,11 +72,7 @@
         <li class="profile_image">
 
             <% if user_signed_in? %>
-              Logged in as <strong><%= current_user.email %></strong> |
-              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-            <% else %>
-              <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-              <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+              <%= image_tag(current_user.avatar.url(:thumb)) if not current_user.avatar.nil? %>
             <% end %>
 
           </div>
@@ -94,7 +90,7 @@
   <div class="container">
     <h2>Say <a href="#">hello@thegypsycorner.ca</a></h2>
     <p class="copyright">
-      © The Gypsy Corner. All rights reserved. Made proudly in Toronto, ON.
+      © The Gypsy Corner. All rights reserved. Built with love in Toronto, ON.
     </p>
     <p class="address">
       4700 Keele Street, Toronto ON • M3J1P3 • Canada
