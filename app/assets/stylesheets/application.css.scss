@@ -29,6 +29,9 @@
  *   8.0 - Footer
  */
 
+html, body {
+  height: 100%;
+}
 
  /*
  * 1.0 MEDIUM BUTTONS
@@ -421,7 +424,19 @@ margin: 2em auto;
  }
 
 
+.content {
+  min-height: 100%;
+  margin-bottom: -250px;
+}
 
+.content:after{
+  content: "";
+  display: block;
+}
+
+.footer, .content:after {
+  height: 250px;
+}
  /*
  *   8.0 - Footer
  */
@@ -431,6 +446,7 @@ margin: 2em auto;
    text-align: center;
    font-family: $font;
    color: $font-color;
+
    a {
      font-family: $font;
      color: #5CE62E;
