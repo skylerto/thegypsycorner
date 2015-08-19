@@ -10,12 +10,13 @@ class Artists::PortfoliosController < ApplicationController
   # GET /artists/portfolios/1
   # GET /artists/portfolios/1.json
   def show
-    @pieces = Artists::Piece.where()
+    @pieces = Artists::Piece.where(portfolio_id: params[:id])
   end
 
   # GET /artists/portfolios/new
   def new
     @artists_portfolio = Artists::Portfolio.new
+
   end
 
   # GET /artists/portfolios/1/edit
@@ -66,7 +67,7 @@ class Artists::PortfoliosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_artists_portfolio
-      @artists_portfolio = Artists::Portfolio.find(params[:id])
+      @artists_portfolio = Artists::Portfolio.find_by_id(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

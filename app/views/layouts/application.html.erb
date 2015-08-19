@@ -40,9 +40,11 @@
   </nav>
 
   <% if user_signed_in? %>
-  <!--  BLOG -->
+
   <nav class="nav_bar">
-      <% if controller_name == "posts" %>
+
+    <!--  BLOG -->
+    <% if controller_name == "posts" %>
     <div class="navbar_left ">
       <ul>
         <li class="nav_link">
@@ -54,9 +56,23 @@
 
       </ul>
     </div>
-
-
     <% end %>
+
+    <!-- PORTFOLIOS -->
+    <% if controller_name == "artists" or controller_name == "portfolios" or controller_name == "pieces" %>
+    <div class="navbar_left ">
+      <ul>
+        <li class="nav_link">
+          <%= link_to "My Portfolios", "/artists/#{current_user.id}"  %>
+        </li>
+        <li class="nav_link">
+          <%=  link_to "New Portfolio", new_artists_portfolio_path %>
+        </li>
+
+      </ul>
+    </div>
+    <% end %>
+
     <div class="navbar_center">
 
     </div>

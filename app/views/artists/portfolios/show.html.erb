@@ -1,27 +1,73 @@
 
+
 <div class="container">
+
   <div class="row">
 
+<% if !@artists_portfolio.nil? %>
     <div class="portfolio-info">
+
 
       <div class="portfolio-profile">
 
-        <%= image_tag @artists_portfolio.image.url(:medium), :class => "profile" %>
+        <%= image_tag @artists_portfolio.image.url(:medium), :class => "profile" if !@artists_portfolio.image.nil? %>
 
       </div>
+
+
       <div class="portfolio-content">
         <p class="portfolio-name">
-          <%= @artists_portfolio.title.capitalize %>
+          <%= @artists_portfolio.title.capitalize if !@artists_portfolio.title.nil? %>
         </p>
         <p class="portfolio-artist-date">
-          <%= "By " + @artists_portfolio.user.name %><%= " on " + @artists_portfolio.updated_at.strftime("%B %d, %Y") %>
+          <%= "By " + @artists_portfolio.user.name  if !@artists_portfolio.user.nil? %><%= " on " + @artists_portfolio.updated_at.strftime("%B %d, %Y") if !@artists_portfolio.updated_at.nil? %>
         </p>
         <p class="portfolio-bio">
-          <%= @artists_portfolio.content %>
+          <%= @artists_portfolio.content if !@artists_portfolio.content.nil? %>
+
+          <div class="medium-buttons-blue">
+            <%= link_to 'Edit', edit_artists_portfolio_path(@artists_portfolio), :class => "medium-button-blue" if current_user == @artists_portfolio.user %>
+          </div>
+
+          <div class="clearfix"></div>
         </p>
       </div>
     </div>
+
+    <% else %>
+    <p class="">
+      You currently do not have any portfolios!
+    </p>
+
+    <% end %>
   </div>
 </div>
 
-<%= link_to 'Edit', edit_artists_portfolio_path(@artists_portfolio) if current_user == @artists_portfolio.user %>
+
+
+
+
+
+<div class="artists">
+<div class="container">
+  <div class="row">
+<% @pieces.each do |piece| %>
+
+<%= link_to piece do %>
+  <div class="col-md-4 col-sm-6 person ">
+    <div class="artist">
+      <%= image_tag piece.image.url(:medium) %>
+    </div>
+
+    <div class="overlay">
+      <p class="name">
+        <%= piece.title.capitalize%>
+      </p>
+    </div>
+  </div>
+<% end %>
+
+<% end %>
+</div>
+</div>
+</div>
