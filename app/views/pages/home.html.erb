@@ -96,8 +96,8 @@
       <% @blog_posts.each do |post| %>
         <div class="col-md-4">
             <div class="post">
-              <h3 class="post-title"><%= post.title %></h3>
-              <h4 class="post-date"><%= post.updated_at.strftime("%B %d, %Y") %> by <%= post.user.name %></h4>
+              <h3 class="post-title"><%= post.title if !post.title.nil? %></h3>
+              <h4 class="post-date"><%= post.updated_at.strftime("%B %d, %Y") if !post.updated_at.nil? %><%= " by " + post.user.name if !post.user.nil? %></h4>
               <p class="post-content">
                 <%= post.content[0..250] %><%=  "..." if post.content.length > 250 %>
               </p>

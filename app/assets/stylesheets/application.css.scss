@@ -614,7 +614,7 @@
      }
    }
    .portfolio-content {
-     margin: 0 auto;
+     margin: 4em auto;
      text-align: center;
      width: 80%;
      .portfolio-name {
@@ -625,8 +625,10 @@
      }
      .portfolio-artist-date {
        font-family: $font;
+       color: #8F8F8F;
        font-weight: 400;
        font-size: 1.2em;
+       margin-top: 0.5em;
        margin-bottom: 1em;
      }
      .portfolio-bio {

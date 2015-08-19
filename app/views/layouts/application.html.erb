@@ -27,7 +27,7 @@
           <li class=""><%= link_to "Home", root_path %></li>
           <li class=""><a href="#shop">Shop</a></li>
           <li class=""><%= link_to "Blog", blog_posts_path %></li>
-          <li class=""><a href="./artwork.html">Artists</a></li>
+          <li class=""><%= link_to "Artists", artists_path %></li>
           <% if user_signed_in? %>
             <li class=""><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
           <% else %>

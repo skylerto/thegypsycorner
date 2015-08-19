@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="artist-info">
+      <div class="artist-profile">
+        <%= image_tag @user.avatar.url(:medium), :class => "profile" %>
+      </div>
+      <div class="content">
+        <p class="name">
+          <%= @user.name.capitalize if !@user.name.nil? %>
+        </p>
+        <p class="bio">
+          <%= @user.bio if !@user.bio.nil? %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="artists">
+    <div class="container">
+      <div class="row">
+    <% @portfolios.each do |port| %>
+
+    <%= link_to port do %>
+      <div class="col-md-4 col-sm-6 person ">
+        <div class="artist">
+          <%= image_tag port.image.url(:medium) %>
+        </div>
+
+        <div class="overlay">
+          <p class="name">
+            <%= port.title.capitalize%>
+          </p>
+        </div>
+      </div>
+    <% end %>
+
+    <% end %>
+  </div>
+</div>
+</div>

@@ -1,24 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @artists_piece.image %>
-</p>
+    <div class="portfolio-info">
+        <div class="portfolio-profile">
+          <%= image_tag @artists_piece.image.url(:medium), :class => "profile" %>
+        </div>
+        <div class="portfolio-content">
+          <p class="portfolio-name">
+            <%= @artists_piece.title %>
+          </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @artists_piece.title %>
-</p>
+          <p class="portfolio-artist-date">
+            <%= "By " + @artists_piece.user.name + " last updated " + @artists_piece.updated_at.strftime("%B %d, %Y") %>
+          </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @artists_piece.content %>
-</p>
+          <p class="portfolio-bio">
+            <%= @artists_piece.content %>
+          </p>
+        </div>
 
-<p>
-  <strong>User:</strong>
-  <%= @artists_piece.user %>
-</p>
+    </div>
 
-<%= link_to 'Edit', edit_artists_piece_path(@artists_piece) %> |
-<%= link_to 'Back', artists_pieces_path %>
+    <%= link_to 'Edit', edit_artists_piece_path(@artists_piece) %> |
+    <%= link_to 'Back', artists_pieces_path %>
+
+  </div>
+</div>

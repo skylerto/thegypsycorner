@@ -1,0 +1,31 @@
+  <div class="artists">
+  <div class="container">
+
+    <h1 id="shop-title">My Portfolios</h1>
+    <div class="row">
+
+      <% @users.each do |user| %>
+
+        <%= link_to user do %>
+          <div class="col-md-4 col-sm-6 person ">
+            <div class="artist">
+              <%= image_tag user.avatar.url(:medium) %>
+            </div>
+
+            <div class="overlay">
+              <p class="name">
+                <% if user.name.nil? %>
+                  <%= user.email %>
+                <% else %>
+                  <%= user.name.capitalize %>
+                <% end %>
+              </p>
+            </div>
+          </div>
+        <% end %>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>

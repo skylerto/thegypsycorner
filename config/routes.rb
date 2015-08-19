@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+get '/artists' => 'artists#index'
+get 'artists/:id' => 'artists#show'
   namespace :artists do
     resources :portfolios
   end
