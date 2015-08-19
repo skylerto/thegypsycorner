@@ -89,6 +89,8 @@
 </div>
 
 <!--  LOOP OVER POSTS (PICK 6) -->
+
+<% if @blog_posts.count > 0 %>
 <div class="blog" id="blog">
   <div class="container">
     <h1 id="blog-title">I love to blog...</h1>
@@ -108,10 +110,12 @@
     </div>
   </div>
 </div>
+<% end %>
 
 
 
 
+<% if @users.count > 0 %>
 <div class="artists">
 <div class="container">
 
@@ -143,7 +147,7 @@
   </div>
 </div>
 </div>
-
+<% end %>
 
 
 <!-- <div class="sponsors">

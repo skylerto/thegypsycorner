@@ -2,8 +2,10 @@
 <div class="container">
 
   <h1 id="shop-title">Artists</h1>
-  <div class="row">
 
+
+  <div class="row">
+  <% if @users.count > 0 %>
     <% @users.each do |user| %>
 
       <%= link_to "/artists/#{user.id}" do %>
@@ -26,6 +28,14 @@
 
     <% end %>
 
+    <% else %>
+      <p>
+        No artists available.
+      </p>
+    <% end %>
+
   </div>
+
+
 </div>
 </div>

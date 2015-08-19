@@ -22,9 +22,9 @@
         </div>
       <% end %>
 
-        <div class="clearfix">
+        <div class="clearfix"></div>
 
-        </div>
+        <% if @blog_posts.count > 0 %>
       <% @blog_posts.each do |post| %>
         <%= link_to post do %>
           <div class="postlet">
@@ -55,10 +55,19 @@
           </div>
         <% end %>
 
+
+
+      <% end %>
+
+      <% else %>
+      <p>
+        No posts available.
+      </p>
       <% end %>
       </div>
     </div>
 
+    <% if @top_posts.count > 0 %>
     <!--  container for TOPSTORIES -->
     <div class="col-md-4 sidebar">
       <p id="top-story">TOP STORIES</p>
@@ -68,12 +77,12 @@
               <div class="top-stories">
                 <div class="story">
                   <p class="story-title">
-                      <%= post.title if !post.title.nil? %>
+                      <%= post.title %>
                     </p>
 
                     <p class="story-date">
-                      <%= post.updated_at.strftime("%B %d, %Y") if !post.updated_at.nil?%>
-                      by <%= post.user.name if !post.user.nil? %>
+                      <%= post.updated_at.strftime("%B %d, %Y") %>
+                      by <%= post.user.name %>
                     </p>
                 </div>
               </div>
@@ -81,6 +90,8 @@
       <% end %>
       <% end %>
     </div>
+
+    <% end %>
 
 
   </div>

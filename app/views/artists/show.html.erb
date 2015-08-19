@@ -30,6 +30,7 @@
       </div>
 
       <div class="row">
+        <% if  @portfolios.count > 0 %>
     <% @portfolios.each do |port| %>
 
     <%= link_to port do %>
@@ -47,6 +48,15 @@
     <% end %>
 
     <% end %>
+
+    <% else %>
+
+    <p>
+      No portfolios available.
+    </p>
+
+    <% end %>
+
   </div>
 </div>
 </div>

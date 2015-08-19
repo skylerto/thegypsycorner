@@ -1,9 +1,11 @@
   <div class="artists">
   <div class="container">
 
+
+
     <h1 id="shop-title">My Portfolios</h1>
     <div class="row">
-
+<% if @users.count > 0 %>
       <% @users.each do |user| %>
 
         <%= link_to user do %>
@@ -25,7 +27,12 @@
         <% end %>
 
       <% end %>
-
+      <% else %>
+        <p>
+          No portfolios available.
+        </p>
+      <% end %>
     </div>
+
   </div>
 </div>

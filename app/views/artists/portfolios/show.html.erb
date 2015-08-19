@@ -54,6 +54,7 @@
     <h2 id="shop-title"><%= @artists_portfolio.title.pluralize %> Pieces</h2>
   </div>
   <div class="row">
+    <% if @pieces.count > 0 %>
 <% @pieces.each do |piece| %>
 
 <%= link_to piece do %>
@@ -71,6 +72,14 @@
 <% end %>
 
 <% end %>
+<% else %>
+<p>
+  No pieces available.
+</p>
+<% end %>
 </div>
+
+
+
 </div>
 </div>

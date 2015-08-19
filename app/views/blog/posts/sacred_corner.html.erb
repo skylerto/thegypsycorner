@@ -64,6 +64,7 @@
       </div>
     </div>
 
+    <% if @top_posts.count > 0 %>
     <!--  container for TOPSTORIES -->
     <div class="col-md-4 sidebar">
       <p id="top-story">TOP STORIES</p>
@@ -86,6 +87,8 @@
       <% end %>
       <% end %>
     </div>
+
+    <% end %>
 
 
   </div>
