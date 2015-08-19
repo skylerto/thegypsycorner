@@ -10,6 +10,7 @@ class Artists::PortfoliosController < ApplicationController
   # GET /artists/portfolios/1
   # GET /artists/portfolios/1.json
   def show
+    @pieces = Artists::Piece.where()
   end
 
   # GET /artists/portfolios/new

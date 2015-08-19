@@ -23,8 +23,8 @@
       </div>
       <div class="field">
         <%= f.label :portfolio %><br>
-        <%= f.select(:portfolio, @portfolios.map {|p|
-            [p.title, p]}, :include_blank => true) %>
+        <%= f.select(:portfolio_id, @portfolios.map {|p|
+            [p.title, p.id]}, :include_blank => true) %>
             <div class="medium-buttons-blue-left">
               <%= link_to 'New Portfolio', new_artists_portfolio_path, :class => "medium-button-blue-left" %>
             </div>
