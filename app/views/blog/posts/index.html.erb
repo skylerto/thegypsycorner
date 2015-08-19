@@ -11,7 +11,9 @@
   <div class="row">
     <h1 style="text-align:center;">Blog</h1>
   </div>
+
   <div class="row">
+    <% if @blog_posts.count > 0 %>
     <!--  Container for postlets -->
     <div class="postlets">
       <div class="col-md-8">
@@ -24,7 +26,7 @@
 
         <div class="clearfix"></div>
 
-        <% if @blog_posts.count > 0 %>
+
       <% @blog_posts.each do |post| %>
         <%= link_to post do %>
           <div class="postlet">
@@ -59,11 +61,7 @@
 
       <% end %>
 
-      <% else %>
-      <p style="text-align: center;">
-        No posts available.
-      </p>
-      <% end %>
+
       </div>
     </div>
 
@@ -93,6 +91,12 @@
 
     <% end %>
 
-
+    <% else %>
+    <p style="text-align: center;">
+      No posts available.
+    </p>
+    <% end %>
   </div>
+
+
 </div>
