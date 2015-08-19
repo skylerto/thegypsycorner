@@ -1,4 +1,28 @@
-<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="row">
+
+    <div class="portfolio-info">
+
+      <div class="portfolio-profile">
+
+        <%= image_tag @artists_portfolio.image.url(:medium), :class => "profile" %>
+
+      </div>
+      <div class="portfolio-content">
+        <p class="portfolio-name">
+          <%= @artists_portfolio.title.capitalize %>
+        </p>
+        <p class="portfolio-artist-date">
+          <%= "By " + @artists_portfolio.user.name %><%= " on " + @artists_portfolio.updated_at.strftime("%B %d, %Y") %>
+        </p>
+        <p class="portfolio-bio">
+          <%= @artists_portfolio.content %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <p>
   <strong>Image:</strong>
