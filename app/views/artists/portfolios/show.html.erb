@@ -51,6 +51,9 @@
 <div class="artists">
 <div class="container">
   <div class="row">
+    <h2 id="shop-title"><%= @artists_portfolio.title.pluralize %> Pieces</h2>
+  </div>
+  <div class="row">
 <% @pieces.each do |piece| %>
 
 <%= link_to piece do %>

@@ -110,105 +110,41 @@
 </div>
 
 
-<!--  LOOP OVER ARTISTS (PICK 6) -->
-<div class="artists" id="artists">
-  <div class="container">
-    <h1 id="shop-title">Our Artists</h1>
 
-    <div class="row">
 
-      <div class="col-md-4 col-sm-6 person ">
-        <%= link_to "/" do %>
+<div class="artists">
+<div class="container">
+
+  <h1 id="shop-title">Our Artists</h1>
+  <div class="row">
+
+    <% @users.each do |user| %>
+
+      <%= link_to "/artists/#{user.id}" do %>
+        <div class="col-md-4 col-sm-6 person ">
           <div class="artist">
-              <%= image_tag "britney.jpg" %>
+            <%= image_tag user.avatar.url(:medium) %>
           </div>
+
           <div class="overlay">
             <p class="name">
-              Britney Blaney
+              <% if user.name.nil? %>
+                <%= user.email %>
+              <% else %>
+                <%= user.name.capitalize %>
+              <% end %>
             </p>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
 
-      <div class="col-md-4 col-sm-6 person ">
-        <%= link_to "/" do %>
-                <div class="artist">
+    <% end %>
 
-                    <%= image_tag "dad.jpg" %>
-
-                </div>
-                <div class="overlay">
-                  <p class="name">
-                    Steve Arnold
-                  </p>
-                </div>
-        <% end %>
-
-      </div>
-
-      <div class="col-md-4 col-sm-6 person ">
-        <%= link_to "/" do %>
-                <div class="artist">
-
-                    <%= image_tag "dave.jpg" %>
-
-                </div>
-                <div class="overlay">
-                  <p class="name">
-                    David Blaney
-                  </p>
-                </div>
-        <% end %>
-
-      </div>
-      <div class="col-md-4 col-sm-6 person">
-        <%= link_to "/" do %>
-                <div class="artist">
-
-                    <%= image_tag "emily.jpg" %>
-
-                </div>
-                <div class="overlay">
-                  <p class="name">
-                    Emily Arnold
-                  </p>
-                </div>
-        <% end %>
-
-      </div>
-      <div class="col-md-4 col-sm-6 person">
-        <%= link_to "/" do %>
-                <div class="artist">
-
-                    <%= image_tag "mom.jpg" %>
-
-                </div>
-                <div class="overlay">
-                  <p class="name">
-                    Pam Arnold
-                  </p>
-                </div>
-        <% end %>
-
-      </div>
-      <div class="col-md-4 col-sm-6 person">
-        <%= link_to "/" do %>
-                <div class="artist">
-
-                    <%= image_tag "rachel.jpg" %>
-
-                </div>
-                <div class="overlay">
-                  <p class="name">
-                    Rachel Arnold
-                  </p>
-                </div>
-        <% end %>
-
-      </div>
-    </div>
   </div>
 </div>
+</div>
+
+
 
 <!-- <div class="sponsors">
   <div class="container">
