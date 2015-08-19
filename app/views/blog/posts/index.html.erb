@@ -1,13 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
-  <h1 class="center">Blog</h1>
+
 </div>
 
 
 
 <!-- Container for post layouts  -->
 <div class="container">
+  <div class="row">
+    <h1 style="text-align:center;">Blog</h1>
+  </div>
   <div class="row">
     <!--  Container for postlets -->
     <div class="postlets">
@@ -27,18 +30,18 @@
           <div class="postlet">
 
             <div class="postlet-image">
-              <%= image_tag post.image.url(:medium) %>
+              <%= image_tag post.image.url(:medium) if !post.image.nil? %>
             </div>
 
             <div class="postlet-content">
 
               <p class="postlet-title">
-                <%= post.title %>
+                <%= post.title if !post.title.nil? %>
               </p>
 
               <p class="postlet-date">
-                <%= post.updated_at.strftime("%B %d, %Y") %>
-                by <%= post.user.name %>
+                <%= post.updated_at.strftime("%B %d, %Y") if !post.updated_at.nil? %>
+                by <%= post.user.name if !post.user.nil? %>
               </p>
               <% if user_signed_in? and current_user.admin? %>
                 <div class="medium-buttons">
@@ -65,12 +68,12 @@
               <div class="top-stories">
                 <div class="story">
                   <p class="story-title">
-                      <%= post.title %>
+                      <%= post.title if !post.title.nil? %>
                     </p>
 
                     <p class="story-date">
-                      <%= post.updated_at.strftime("%B %d, %Y") %>
-                      by <%= post.user.name %>
+                      <%= post.updated_at.strftime("%B %d, %Y") if !post.updated_at.nil?%>
+                      by <%= post.user.name if !post.user.nil? %>
                     </p>
                 </div>
               </div>
