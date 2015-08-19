@@ -21,12 +21,12 @@ ActiveRecord::Schema.define(version: 20150819115616) do
     t.string   "title"
     t.text     "content"
     t.integer  "user_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.integer  "portfolio_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "artists_portfolio_id"
   end
 
-  add_index "artists_pieces", ["portfolio_id"], name: "index_artists_pieces_on_portfolio_id"
+  add_index "artists_pieces", ["artists_portfolio_id"], name: "index_artists_pieces_on_artists_portfolio_id"
   add_index "artists_pieces", ["user_id"], name: "index_artists_pieces_on_user_id"
 
   create_table "artists_portfolios", force: :cascade do |t|
