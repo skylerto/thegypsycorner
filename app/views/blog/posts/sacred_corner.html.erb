@@ -74,12 +74,12 @@
               <div class="top-stories">
                 <div class="story">
                   <p class="story-title">
-                      <%= post.title %>
+                      <%= post.title if !post.title.nil? %>
                     </p>
 
                     <p class="story-date">
-                      <%= post.updated_at.strftime("%B %d, %Y") %>
-                      by <%= post.user.name %>
+                      <%= post.updated_at.strftime("%B %d, %Y") if !post.updated_at.nil?%>
+                      by <%= post.user.name if !post.user.nil?%>
                     </p>
                 </div>
               </div>

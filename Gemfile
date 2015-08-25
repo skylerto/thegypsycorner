@@ -13,6 +13,7 @@ gem 'paperclip'
 gem 'devise'
 gem 'aws-sdk', '< 2.0'
 gem 'devise-bootstrap-views'
+gem 'ckeditor'
 
 group :development, :test do
   gem 'byebug'

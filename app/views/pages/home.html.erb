@@ -101,7 +101,7 @@
               <h3 class="post-title"><%= post.title if !post.title.nil? %></h3>
               <h4 class="post-date"><%= post.updated_at.strftime("%B %d, %Y") if !post.updated_at.nil? %><%= " by " + post.user.name if !post.user.nil? %></h4>
               <p class="post-content">
-                <%= post.content[0..250] %><%=  "..." if post.content.length > 250 %>
+                <%= post.content[0..250].html_safe %><%=  "..." if post.content.length > 250 %>
               </p>
               <%= link_to "Read More", post, :class => "read-more" %>
             </div>

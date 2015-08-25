@@ -39,7 +39,7 @@
     </div><!-- /.container-fluid -->
   </nav>
 
-  <% if user_signed_in? %>
+  <% if user_signed_in? or controller_name == "posts" %>
 
   <nav class="nav_bar">
 
@@ -59,7 +59,7 @@
     <% end %>
 
     <!-- PORTFOLIOS -->
-    <% if controller_name == "artists" or controller_name == "portfolios" or controller_name == "pieces" %>
+    <% if controller_name == "artists" or controller_name == "portfolios" or controller_name == "pieces" and user_signed_in? %>
     <div class="navbar_left ">
       <ul>
         <li class="nav_link">
@@ -78,23 +78,19 @@
     </div>
     <div class="navbar_right clearfix">
       <ul>
-        <li >
+        <!-- <li >
           <a href="#" >
             <div class="search">
             <%= image_tag "search.png", :class => "search-icon"  %><input type="search" placeholder="Search"/>
             </div>
 
           </a>
-        </li>
+        </li> -->
         <!-- <li><a href="#" class="profile_image"><img src="img/sophie.JPG" /></a></li> -->
         <li class="profile_image">
-
-
-              <%= link_to edit_user_registration_path do %>
-                <%= image_tag(current_user.avatar.url(:thumb)) if not current_user.avatar.nil? %>
-              <% end %>
-
-
+            <%= link_to edit_user_registration_path do %>
+              <%= image_tag(current_user.avatar.url(:thumb)) if not current_user.avatar.nil? %>
+            <% end if user_signed_in? %>
           </div>
         </li>
       </ul>
