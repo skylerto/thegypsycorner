@@ -20,9 +20,11 @@
 
 
 <% if current_user == @blog_post.user %>
-<div class="medium-buttons-blue-left">
-  <%= link_to 'Edit', edit_blog_post_path(@blog_post), :class => "medium-button-blue-left" %>
-  <%= link_to 'Back', blog_posts_path, :class => "medium-button-blue-left" %>
+<div class="edit">
+  <div class="medium-buttons-blue-left">
+    <%= link_to 'Edit', edit_blog_post_path(@blog_post), :class => "medium-button-blue-left" %>
+    <%= link_to 'Back', blog_posts_path, :class => "medium-button-blue-left" %>
+  </div>
 </div>
 <% end %>
 
