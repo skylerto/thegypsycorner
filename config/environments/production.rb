@@ -78,6 +78,10 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
 
+  config.serve_static_assets = true
+  config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+  config.assets.compile = false # we don't want compilation fallbacks
+
   config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
