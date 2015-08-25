@@ -11,18 +11,18 @@
   <div class="row">
     <h1 style="text-align:center;">Blog</h1>
   </div>
-
+  <% if user_signed_in? and current_user.admin? %>
+    <div class="medium-buttons-blue ">
+      <%= link_to 'New Post', new_blog_post_path, :class => "medium-button-blue" %>
+    </div>
+  <% end %>
   <div class="row">
     <% if @blog_posts.count > 0 %>
     <!--  Container for postlets -->
     <div class="postlets">
       <div class="col-md-8">
 
-      <% if user_signed_in? and current_user.admin? %>
-        <div class="medium-buttons-blue ">
-          <%= link_to 'New Post', new_blog_post_path, :class => "medium-button-blue" %>
-        </div>
-      <% end %>
+
 
         <div class="clearfix"></div>
 
