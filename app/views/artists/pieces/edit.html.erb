@@ -1,6 +1,15 @@
-<h1>Editing Artists Piece</h1>
+
+<div class="container">
+  <div class="row">
+
+<div class="form">
+
+<h1>Edit Piece <%= @artists_piece.title if @artists_piece.title.length > 0 %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @artists_piece %> |
-<%= link_to 'Back', artists_pieces_path %>
+<%= link_to 'Show', @artists_piece %>
+
+</div>
+  </div>
+</div>

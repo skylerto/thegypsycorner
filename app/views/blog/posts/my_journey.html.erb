@@ -23,36 +23,39 @@
         </div>
 <% if @blog_posts.count > 0 %>
 
-  <% @blog_posts.each do |post| %>
-    <%= link_to post do %>
-      <div class="postlet">
+<% @blog_posts.each do |post| %>
+  <%= link_to post do %>
+    <div class="postlet">
 
-        <div class="postlet-image">
-          <%= image_tag post.image.url(:medium) %>
-        </div>
+      <div class="postlet-image">
+        <%= image_tag post.image.url(:medium) if !post.image.nil? %>
+      </div>
 
-        <div class="postlet-content">
+      <div class="postlet-content">
 
-          <p class="postlet-title">
-            <%= post.title %>
-          </p>
+        <p class="postlet-title">
+          <%= post.title if !post.title.nil? %>
+        </p>
 
-          <p class="postlet-date">
-            <%= post.updated_at.strftime("%B %d, %Y") %>
-            by <%= post.user.name %>
-          </p>
-          <% if user_signed_in? and current_user.admin? %>
-            <div class="medium-buttons">
-              <%= link_to 'Edit', edit_blog_post_path(post), :class => "medium-button" %>
-              <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "medium-button" %>
-            </div>
-          <% end %>
-
-        </div>
+        <p class="postlet-date">
+          <%= post.updated_at.strftime("%B %d, %Y") if !post.updated_at.nil? %>
+          by <%= post.user.name if !post.user.nil? %>
+        </p>
+        <% if user_signed_in? and current_user.admin? %>
+          <div class="medium-buttons">
+            <%= link_to 'Edit', edit_blog_post_path(post), :class => "medium-button" %>
+            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "medium-button" %>
+          </div>
+        <% end %>
 
       </div>
-    <% end %>
-    <% end %>
+
+    </div>
+  <% end %>
+
+
+
+<% end %>
 <% else %>
 <p>
   No My Journey posts at the moment!

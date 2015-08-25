@@ -33,6 +33,14 @@ html, body {
   height: 100%;
 }
 
+.form {
+  width: 50%;
+  margin: 0 auto;
+  h1 {
+    text-align: center;
+  }
+}
+
  /*
  * 1.0 MEDIUM BUTTONS
  *   Styling similar to that of medium.com
@@ -475,6 +483,7 @@ margin: 2em auto;
  .postlets {
    text-align: center;
    width: 100%;
+   padding: 0 8em;
    a {
      text-decoration: none;
    }
@@ -518,7 +527,7 @@ margin: 2em auto;
    padding: 2em;
    margin: 1em;
 
-  
+
  p {
    margin-top: 2em;
    font-family: $secondary-font ;

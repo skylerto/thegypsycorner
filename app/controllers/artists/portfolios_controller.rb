@@ -10,7 +10,7 @@ class Artists::PortfoliosController < ApplicationController
   # GET /artists/portfolios/1
   # GET /artists/portfolios/1.json
   def show
-    @pieces = Artists::Piece.where(portfolio_id: params[:id])
+    @pieces = Artists::Piece.where(artists_portfolio_id: params[:id])
   end
 
   # GET /artists/portfolios/new

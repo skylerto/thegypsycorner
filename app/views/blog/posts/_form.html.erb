@@ -1,6 +1,5 @@
-<div class="container">
-  <div class="row">
-    <%= form_for(@blog_post) do |f| %>
+
+    <%= bootstrap_form_for(@blog_post) do |f| %>
       <% if @blog_post.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@blog_post.errors.count, "error") %> prohibited this blog_post from being saved:</h2>
@@ -14,11 +13,11 @@
       <% end %>
 
       <div class="field">
-        <%= f.label :image, 'New Image'  %><br />
+
         <%= f.file_field :image %>
       </div>
       <div class="field">
-        <%= f.label :tag %><br>
+
         <%= f.select(:tag, @tags.map {|p|
             [p.name, p.name]}, :include_blank => true) %>
             <div class="medium-buttons-blue-left">
@@ -26,17 +25,15 @@
             </div>
       </div>
       <div class="field">
-        <%= f.label :title %><br>
+
         <%= f.text_field :title %>
       </div>
       <div class="field">
-        <%= f.label :content %><br>
+
         <%=  f.cktext_area :content, :rows => 8 %>
       </div>
       <div class="actions">
         <%= f.submit %>
+        <%= link_to 'Cancel', blog_posts_path %>
       </div>
     <% end %>
-
-  </div>
-</div>

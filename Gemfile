@@ -14,6 +14,7 @@ gem 'devise'
 gem 'aws-sdk', '< 2.0'
 gem 'devise-bootstrap-views'
 gem 'ckeditor'
+gem 'bootstrap_form'
 
 group :development, :test do
   gem 'byebug'

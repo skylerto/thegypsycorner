@@ -19,7 +19,7 @@
             <%= @artists_piece.content %>
 
             <div class="medium-buttons-blue">
-              <%= link_to 'Edit', edit_artists_portfolio_path(@artists_piece), :class => "medium-button-blue" if current_user == @artists_piece.user %>
+              <%= link_to 'Edit', edit_artists_piece_path(@artists_piece), :class => "medium-button-blue" if current_user == @artists_piece.user %>
             </div>
         <div class="clearfix"></div>
           </p>
