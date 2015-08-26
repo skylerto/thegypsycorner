@@ -1,14 +1,13 @@
-<p id="notice"><%= notice %></p>
 
-<div class="container">
 
-</div>
+<% title "Posts" %>
 
 
 
 <!-- Container for post layouts  -->
 <div class="container">
   <div class="row">
+    <p id="notice"><%= notice %></p>
     <h1 style="text-align:center;">Blog</h1>
   </div>
   <% if user_signed_in? and current_user.admin? %>
