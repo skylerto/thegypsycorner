@@ -1,0 +1,508 @@
+@import 'variables';
+
+/**
+*     TABLE OF CONTENTS
+*
+*   1.0 - Navigation
+*   2.0 - Header
+*   3.0 - The Corner
+*   4.0 - Shop
+*   5.0 - Blog
+*   6.0 - Artists
+*   7.0 - Sponsors
+*   8.0 - Footer
+*/
+
+
+/*
+*   1.0 - Navigation
+*/
+.navbar {
+  margin: 0;
+  padding: 0;
+}
+.navbar-default {
+  background-color: $background-color;
+  font-family: $font;
+  color: $font-color;
+  .navbar-brand {
+    font-family: $brand-font;
+    font-size: 2em;
+    color: $font-color;
+  }
+  .navbar-nav>li>a {
+    font-family: $font;
+    color: $font-color;
+    &.hover{
+      color: $font-color;
+    }
+  }
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  background-color: #627183;
+  color: $font-color;
+}
+
+
+/* Secondary Navigation */
+.nav_bar {
+  margin: 0;
+  border-bottom: 0.1em solid #CECECF;
+  height: 50px;
+  background-color: #B045B0;
+  ul {
+    list-style: none;
+    li {
+      float: left;
+    }
+  }
+  .nav_link {
+    padding-top: 1em;
+    margin: 0 1em;
+    a {
+    color: white;
+    }
+  }
+  .navbar_left{
+    float: left;
+  }
+  .navbar_right{
+    float: right;
+    .profile_image {
+      margin-right: 1em;
+      img{
+        border-radius: 25px;
+        margin: 0;
+        padding: 0.2em;
+        width: 50px;
+        height:50px;
+      }
+    }
+    .search {
+      margin-top: 0.6em;
+      margin-right: 0.5em;
+      padding: 0.2em;
+      outline: none;
+      background: white;
+      border: 1px solid #A6A5A6;
+      border-radius: 1.5em;
+
+    }
+    input[type="search"] {
+      padding-left: 0.4em;
+      outline: none;
+      background: transparent;
+      border: none;
+      border-radius: 1.5em;
+    }
+  }
+}
+
+
+
+/*
+*   2.0 - Header
+*/
+.header  {
+  margin-top: -2em;
+  height: 768px;
+  background: url("../img/sutton-fair-wagon.JPG") no-repeat fixed center;
+  background-size:100%;
+  .overlay {
+    height: 768px;
+    background: rgba(0,0,0,0.6);
+  }
+  .header_title {
+    padding: 4em 1em 5em 1em;
+    font-family: $font;
+    color: $font-color;
+    text-align: center;
+  }
+  .header_subtitle {
+    width: 100%;
+    padding: 6em 1em 1em 1em;
+    font-family: $font;
+    color: $font-color;
+    text-align: center;
+  }
+}
+
+
+
+/*
+*   3.0 - The Corner
+*/
+.corner {
+  width: 100%;
+  background-color: #008FB2;
+  text-align: center;
+  padding: 2em 1em;
+  .blog-icon, .shop-icon, .discover-icon{
+    padding: 2em;
+  }
+  a {
+    font-family: $font;
+    color: $font-color;
+    text-decoration: none;
+  }
+  img {
+    height: 75px;
+    width: 75px;
+  }
+}
+
+
+
+/*
+*   4.0 - Shop
+*/
+.shop {
+  text-align: center;
+  padding: 2em;
+
+  #shop-title{
+    margin-bottom: 1em;
+  }
+  .product {
+    margin: 0.4em auto;
+    height: $product-size;
+    width: $product-size;
+    img {
+      width:100%;
+    }
+  }
+}
+
+
+
+/*
+*   5.0 - Blog
+*/
+.blog {
+  width: 100%;
+  background-color: #B045B0;
+  padding: 2em 1em;
+  #blog-title{
+    margin-bottom: 1em;
+    text-align: center;
+    font-family: $font;
+    color: $font-color;
+  }
+  .post {
+    padding: 3em 1em;
+    font-family: $font;
+    color: $font-color;
+    .post-title{
+      text-align: center;
+      font-size: 1.5em;
+    }
+    .post-date{
+      text-align: center;
+      margin-bottom: 1.5em;
+      font-size: 1em;
+      font-family: $secondary-font;
+    }
+    .post-content {
+      margin-bottom: 1.5em;
+      font-family: $secondary-font;
+    }
+    .read-more{
+      color: #5CE62E;
+    }
+  }
+  a {
+    font-family: $font;
+    color: #B8E986;
+    text-decoration: none;
+  }
+  img {
+    height: 75px;
+    width: 75px;
+  }
+}
+
+
+
+/*
+*   6.0 - Artists
+*/
+.artists {
+  text-align: center;
+  width: 100%;
+  padding: 2em;
+  .container{
+
+    .row {
+      margin: 0 auto;
+        width: (3 * $artist-size) + 50px;
+  #shop-title{
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  .person {
+    width: $artist-size;
+    height:$artist-size;
+    margin: 0.4em;
+    .artist {
+      position: absolute;
+      img {
+        width: $artist-size;
+        height:$artist-size;
+      }
+    }
+    .overlay {
+      position: relative;
+      background: rgba(0, 0, 0, 0.3);
+      width: $artist-size;
+      height: $artist-size;
+      .name {
+        padding-top: 6em;
+        font-family: $font;
+        color: $font-color;
+        font-size: 2em;
+        position: relative;
+      }
+    }
+  }
+}
+}
+}
+
+
+
+/*
+*   7.0 - Sponsors
+*/
+.sponsors {
+  text-align: center;
+  padding: 2em;
+  .row{
+    margin-top: -2em;
+  }
+  .google {
+    padding-top: 3em;
+  }
+  #shop-title{
+    margin-bottom: 1em;
+  }
+  img {
+    width:50%;
+  }
+}
+
+
+
+/*
+*   8.0 - Footer
+*/
+.footer {
+  background: #3C4959;
+  padding: 2em 0;
+  text-align: center;
+  font-family: $font;
+  color: $font-color;
+  a {
+    font-family: $font;
+    color: #5CE62E;
+    text-decoration: none;
+  }
+  .copyright {
+    padding: 1em 0 0 0;
+  }
+  .address {
+    padding: 0 0 1em 0;
+
+  }
+  .social {
+    a{
+      padding: 0 1em;
+    }
+  }
+}
+
+
+/*
+*   9.0 - Blog
+*/
+
+/* Postlets */
+.postlets {
+  text-align: center;
+  width: 100%;
+  a {
+    text-decoration: none;
+  }
+.postlet {
+margin: 2em 1em;
+  .postlet-image {
+    position: absolute;
+    img{
+      width: $postlet-image-width;
+      height:$postlet-image-height;
+    }
+  }
+  .postlet-content{
+    width: $postlet-image-width;
+    height:$postlet-image-height;
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2.5em 1em;
+      .postlet-title{
+        font-family: $font;
+        color: $font-color;
+        font-size: 2em;
+        position: relative;
+
+      }
+      .postlet-date{
+        font-family: $font;
+        color: $font-color;
+        font-size: 1.2em;
+        position: relative;
+
+      }
+    }
+  }
+}
+
+/* Post */
+
+.post {
+  width: 100%;
+  padding: 2em;
+  margin: 1em;
+  .post-image {
+
+    img{
+      width: $postlet-image-width;
+      height:$postlet-image-height;
+    }
+  }
+
+  .post-header {
+    .post-title{
+      font-family: $font;
+      font-weight: 600;
+    }
+    .post-date {
+      margin-top: -0.5em;
+      color: #8F8F8F;
+      font-weight: 300;
+      font-family: $font;
+      font-size: 1.1em;
+    }
+
+  }
+  .post-content{
+    font-family: $secondary-font ;
+    letter-spacing: 0.5px;
+    line-height: 25px;
+    }
+    p {
+      margin-top: 2em;
+    }
+  }
+
+
+
+/* Top Stories */
+.sidebar {
+  text-align: left;
+  padding: 1em;
+  margin: 2em 0;
+  a {
+    color: #333;
+  }
+#top-story {
+  font-weight: 800;
+  padding-left: 1em;
+}
+.top-stories {
+  padding: 1em;
+
+  .story {
+    border-bottom: 1px solid #0090B0;
+
+    .story-title {
+      font-weight: 600;
+      font-size: 1em;
+      margin: 0;
+    }
+    .story-date {
+      font-size: 0.9em;
+      color: #8F8F8F;
+    }
+  }
+}
+}
+
+/*
+*   10 - Artwork
+*/
+.artist-info {
+  margin-top: 3em;
+  .artist-profile {
+    width: $artist-size;
+    height:$artist-size;
+    margin: 1em auto;
+    img {
+      width: $artist-size;
+      height:$artist-size;
+    }
+  }
+  .content {
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+    .name {
+      font-family: $font;
+      font-weight: 600;
+      font-size: 2em;
+    }
+    .bio {
+
+      font-family: $secondary-font ;
+      letter-spacing: 0.5px;
+      line-height: 25px;
+    }
+  }
+}
+
+/*
+*
+*/
+.portfolio-info {
+    margin-top: 3em;
+  .portfolio-profile {
+    width: $artist-size;
+    height:$artist-size;
+    margin: 1em auto;
+    img {
+      width: $artist-size;
+      height:$artist-size;
+    }
+  }
+  .portfolio-content {
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+    .portfolio-name {
+      font-family: $font;
+      font-weight: 600;
+      font-size: 2em;
+      margin: 0;
+    }
+    .portfolio-artist-date {
+      font-family: $font;
+      font-weight: 400;
+      font-size: 1.2em;
+      margin-bottom: 1em;
+    }
+    .portfolio-bio {
+      font-family: $secondary-font ;
+      letter-spacing: 0.5px;
+      line-height: 25px;
+    }
+  }
+
+}
